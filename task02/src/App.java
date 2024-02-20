@@ -42,7 +42,7 @@ public class App {
                     if (!word.isEmpty()) {
                         if (prevWord != null) {
                             wordMap.putIfAbsent(prevWord, new HashMap<>());
-                            wordMap.get(prevWord).merge(word, 1, (oldVal, newVal) -> oldVal + newVal);
+                            wordMap.get(prevWord).merge(word, 1, Integer::sum);
                         }
                         prevWord = word;
                     }
